@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For You, Always</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="floating-layer" id="floatingLayer" aria-hidden="true"></div>
+  <div class="music-player" aria-label="Background music player">
+    <button class="music-player-button" id="floatingMusicButton" type="button" onclick="playMusic()">🎧 Play our song 💖</button>
+  </div>
+
+  <audio id="bg-music" loop preload="auto">
+    <source src="music.mp3" type="audio/mp3" />
+  </audio>
+
+  <iframe
+    class="music-fallback"
+    id="musicFallbackFrame"
+    width="0"
+    height="0"
+    src="about:blank"
+    title="Background music fallback"
+    frameborder="0"
+    allow="autoplay"
+    aria-hidden="true"
+  ></iframe>
+
+  <main class="app">
+    <section class="screen landing-screen is-active" id="landingScreen">
+      <div class="landing-card fade-in">
+        <p class="eyebrow">A letter from the heart</p>
+        <h1>Hey…</h1>
+        <p class="landing-copy">This one is soft, honest, and real. It’s the part where I try to say what my heart has been holding.</p>
+        <button class="glow-button" id="enterButton">Hey… please click this 💌</button>
+        <p class="landing-note">Gentle sounds, slow feelings, and a memory we can sit inside for a moment.</p>
+      </div>
+    </section>
+
+    <section class="screen memory-screen" id="memoryScreen" aria-hidden="true">
+      <div class="screen-overlay" id="screenOverlay"></div>
+
+      <div class="top-bar">
+        <div>
+          <p class="eyebrow">Memory Mode</p>
+          <h2>For my best friend</h2>
+        </div>
+        <button class="music-toggle" id="musicToggle" type="button" aria-pressed="false">Music: off</button>
+      </div>
+
+      <section class="apology-panel" aria-label="Apology message">
+        <div class="message-header">
+          <p class="message-label">Typing from my heart</p>
+          <h3>I need you to read this slowly.</h3>
+        </div>
+
+        <div class="typing-box">
+          <pre id="typedMessage" class="typed-message" aria-live="polite"></pre>
+          <div class="typing-cursor" id="typingCursor"></div>
+        </div>
+
+        <div class="emoji-points" aria-hidden="true">
+          <span class="emoji-point point-one">🥺</span>
+          <span class="emoji-point point-two">💔</span>
+          <span class="emoji-point point-three">💖</span>
+          <span class="emoji-point point-four">✨</span>
+          <span class="emoji-point point-five">😭</span>
+        </div>
+      </section>
+
+      <section class="memories-panel">
+        <div class="message-header">
+          <p class="message-label">Our Memories 💫</p>
+          <h3>Little pieces of us, kept softly here.</h3>
+        </div>
+
+        <div class="memory-grid">
+          <article class="memory-card memory-card-one">
+            <span class="memory-tag">Our laughs</span>
+            <h4>When everything felt lighter</h4>
+            <p>A place for the moments that turned into inside jokes and safe silence.</p>
+          </article>
+          <article class="memory-card memory-card-two">
+            <span class="memory-tag">Our talks</span>
+            <h4>Late-night honesty</h4>
+            <p>All the things we said when the world was quiet and it was just us.</p>
+          </article>
+          <article class="memory-card memory-card-three">
+            <span class="memory-tag">Our promise</span>
+            <h4>Still here</h4>
+            <p>Even after the hard parts, this space remembers how deeply I care.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="final-panel">
+        <div class="message-header center-align">
+          <p class="message-label">One last question</p>
+          <h3>Do you think you could forgive me?</h3>
+        </div>
+
+        <div class="button-row">
+          <button class="decision-button forgive" id="forgiveButton" type="button">Forgive me Friend? 🥺💖</button>
+          <button class="decision-button mad" id="madButton" type="button">Still mad? 😭💔</button>
+        </div>
+      </section>
+
+      <div class="response-overlay" id="responseOverlay" aria-live="assertive" aria-hidden="true">
+        <div class="response-card" id="responseCard">
+          <p class="response-copy" id="responseText"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
