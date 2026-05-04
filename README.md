@@ -1,4 +1,3 @@
-https://syed1230.github.io/Letter/
 # 💖 For You, Always
 
 A soft, emotional, and interactive web experience designed to express feelings that are hard to say out loud.
